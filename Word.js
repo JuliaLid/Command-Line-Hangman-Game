@@ -1,31 +1,34 @@
 var letter = require("./Letter.js");
 
 function Word(word){
-    this.letterArray = [];
-    this.wordLetters = function(){
+    //take in the word and split it into an array of letters
+    var wordLetters = word.split('');
+     this.wordLetterArray = wordLetters;
+     //create an array of letter objects
+     this.renderWord = function(){
+        for(i=0;i<this.wordLetterArray.length;i++){
+            var letterObject = new letter (this.wordLetterArray[i]);
 
-    }
-    this.processGuess = function(char){
+            //lettersArray is an array of letter objects
+            var lettersArray = [];
+            lettersArray.push(letterObject);
+        }
 
-       var characterMatch = new Letter(TBD);//At which point do we use Letter constructor?
-       for (i=0; i<this.letterArray.length;i++){
-           characterMatch.checkingLetter(i);
-       }
+        for (j=0;j<lettersArray.length;j++){
+            // lettersArray[j].renderCharacter();
+            console.log(lettersArray[j]);
+            console.log(lettersArray[j].character);
+        }    
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+Word.prototype.guess = function(letter) {
+    
+}
+var newWord = new Word("bread");
+console.log(newWord.wordLetterArray);
+newWord.renderWord();
 
 
 
