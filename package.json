@@ -1,0 +1,27 @@
+{
+  "name": "node.js-hangman-game-",
+  "version": "1.0.0",
+  "description": "hangman command-line game using constructir functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaLid/Node.js-Hangman-Game-.git"
+  },
+  "keywords": [
+    "hangman",
+    "node"
+  ],
+  "author": "Julia Lidstrom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuliaLid/Node.js-Hangman-Game-/issues"
+  },
+  "homepage": "https://github.com/JuliaLid/Node.js-Hangman-Game-#readme",
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "require": "^2.4.20"
+  }
+}
