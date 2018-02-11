@@ -27,12 +27,4 @@ Letter.prototype.checkGuess = function(guess){
     }
 
 
-// var letterA = new Letter("a");
-// // console.log(letterA);
-
-// letterA.checkGuess("b");
-// letterA.renderCharacter();
-// letterA.hasBeenGuessed = false;
-// letterA.checkGuess("a");
-
 module.exports = Letter;
