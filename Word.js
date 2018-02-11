@@ -5,30 +5,38 @@ function Word(word){
     var wordLetters = word.split('');
      this.wordLetterArray = wordLetters;
      //create an array of letter objects
-     this.renderWord = function(){
-        for(i=0;i<this.wordLetterArray.length;i++){
-            var letterObject = new letter (this.wordLetterArray[i]);
+     this.lettersArray = [];
+}
 
-            //lettersArray is an array of letter objects
-            var lettersArray = [];
-            lettersArray.push(letterObject);
-        }
 
-        for (j=0;j<lettersArray.length;j++){
-            // lettersArray[j].renderCharacter();
-            console.log(lettersArray[j]);
-            console.log(lettersArray[j].character);
-        }    
+Word.prototype.renderWord = function(){
+    for(i=0;i<this.wordLetterArray.length;i++){
+        this.lettersArray.push(new letter (this.wordLetterArray[i]));
     }
+}
+Word.prototype.toString = function(){    
+    var output = "";
+    for (j=0;j<this.lettersArray.length;j++){
+            // lettersArray[j].renderCharacter();
+        output += this.lettersArray[j].renderCharacter();
+        //    console.log(arrayLetterObject.character);
+        }  
+    console.log(output);  
 }
 
 
 Word.prototype.guess = function(letter) {
     
 }
+
 var newWord = new Word("bread");
-console.log(newWord.wordLetterArray);
+// console.log(newWord.wordLetterArray);
 newWord.renderWord();
+// newWord.lettersArray[0].hasBeenGuessed = true;
+newWord.toString();
+
+
+// console.log(newWord.lettersArray[0]);
 
 
 
