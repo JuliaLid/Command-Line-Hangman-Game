@@ -6,39 +6,77 @@ function Word(word){
      this.wordLetterArray = wordLetters;
      //create an array of letter objects
      this.lettersArray = [];
+     //create a string of guesses
+     this.guessedWord = [];
+    //  this.output="";
+    
 }
 
-
-Word.prototype.renderWord = function(){
+//method to create an array of letter objects
+Word.prototype.createArray = function(){
     for(i=0;i<this.wordLetterArray.length;i++){
         this.lettersArray.push(new letter (this.wordLetterArray[i]));
     }
 }
+
+// //method to evoke renderCharacter function from the Letter Constructor
+// Word.prototype.toString = function(){    
+//     // var output = "";
+//     for (j=0;j<this.lettersArray.length;j++){
+//        this.output += this.lettersArray[j].renderCharacter();
+//         }  
+//     // return output;  
+//     console.log(this.output);  
+// }
+
+Word.prototype.guess = function(guess) {
+    // this.guessesMade += guess;
+    for (k=0;k<this.lettersArray.length;k++){
+        //call checkGuess method on the letter cosntructor 
+        
+        this.lettersArray[k].checkGuess(guess);
+        // this.toString();
+        // var guessedLetter = this.lettersArray[k].renderCharacter();
+        // console.log(this.guessedLetter);
+        // this.guessedWord.push(this.guessedLetter);
+       
+        // console.log(this.lettersArray[k]);
+        // console.log(this.output);
+        // this.guessedWord += this.lettersArray[k];
+      
+      
+    }
+    //    console.log(this.guessedWord);  
+    this.toString();
+}
+
+//method to evoke renderCharacter function from the Letter Constructor
 Word.prototype.toString = function(){    
     var output = "";
     for (j=0;j<this.lettersArray.length;j++){
-            // lettersArray[j].renderCharacter();
-        output += this.lettersArray[j].renderCharacter();
-        //    console.log(arrayLetterObject.character);
+       output += this.lettersArray[j].renderCharacter();
         }  
+    // return output;  
     console.log(output);  
 }
 
 
-Word.prototype.guess = function(letter) {
-    
-}
-
 var newWord = new Word("bread");
 // console.log(newWord.wordLetterArray);
-newWord.renderWord();
+newWord.createArray();
 // newWord.lettersArray[0].hasBeenGuessed = true;
 newWord.toString();
+newWord.guess("b");
+// newWord.guess("r");
+// newWord.guess("d");
 
+// newWord.guess("d");
 
-// console.log(newWord.lettersArray[0]);
+// newWord.lettersArray[0].hasBeenGuessed = true;
+// newWord.lettersArray[3].hasBeenGuessed = true;
+// newWord.lettersArray[4].hasBeenGuessed = true;
 
-
+// newWord.toString();
 
 
 module.exports = Word;
