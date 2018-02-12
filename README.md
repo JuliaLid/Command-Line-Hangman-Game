@@ -2,6 +2,7 @@
 ## Project Overview
 
 Create a Hangman command-line game using constructor functions.
+![capture](https://user-images.githubusercontent.com/31745567/36114558-efb942ac-0ff5-11e8-957b-9b8a215ef6f1.JPG)
 
 ## Technology Stack
 * JavaScript 
