@@ -7,7 +7,7 @@ function Word(word){
      //create an array of letter objects
      this.lettersArray = [];
      //create a string of guesses
-     this.guessedWord = [];
+     this.guessedWord;
     //  this.output="";
     
 }
@@ -37,20 +37,30 @@ Word.prototype.toString = function(){
         }  
     console.log(output);  
 }
- 
-Word.prototype.isComplete = function(){
-    for (l=0;l<this.lettersArray.length;l++){
-        if(this.lettersArray[l].hasBeenGuessed === false) {
-            return false;
+
+
+Word.prototype.didWeFindTheWord = function() {
+    // console.log(this.lettersArray[0].hasBeenGuessed);
+    // console.log(this.lettersArray.letter);
+    for (k=0;k<this.lettersArray.length;k++){
+        if(this.lettersArray[k].hasBeenGuessed == false){
+        this.guessedWord = false;
+        // console.log(this.lettersArray[k]);  
+        // console.log(this.lettersArray[k].hasBeenGuessed);   
+        
         } else {
-            return true;
-        }
-    }
-}
-// var newWord = new Word("bread");
+           this.guessedWord = true;
+       }
+    }  
+};
+
+
+// var newWord = new Word("Bullseye");
 // newWord.createArray();
 // newWord.toString();
-// newWord.guess("b");
+// newWord.guess("e");
+// newWord.didWeFindTheWord();
+// console.log(this.guessedWord);
 // newWord.guess("r");
 // newWord.guess("d");
 // newWord.isComplete();
