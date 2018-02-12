@@ -32,8 +32,8 @@ function gamePlay(){
     var property = {
         name: 'input',
         message:colors.green.bold('Guess a letter'),
-        validator: /^(a|A)/,
-        warning: colors.red.bold('Must be a single letter'),
+        validator: /^[^a-z]*([a-z])[^a-z]*$/i,
+        warning: colors.red.bold('Must be a single letter')
     };
 
     prompt.get(property, function (err, result) {
@@ -66,16 +66,15 @@ function resetGame(){
         name: 'yesno',
         message:colors.green.bold('Would you like to play again?'),
         validator: /yes*|no]?/,
-        warning: colors.red.bold('Must respond yes or no'),
-       
-      };
+        warning: colors.red.bold('Must respond yes or no')
+    };
    
     prompt.get(property,function (err, result) {
         
         if(result.yesno==="yes"){
             startGame();
         } else {
-            console.log("Thanks");
+            console.log("Thanks for playing. No go and watch 'Finding Nemo'!");
         }
     });
 }
