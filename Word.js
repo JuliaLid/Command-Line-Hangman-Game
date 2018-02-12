@@ -21,7 +21,6 @@ Word.prototype.createArray = function(){
 
 //method to check the player's guess and then call the render toString function
 Word.prototype.guess = function(guess) {
-    // this.guessesMade += guess;
     for (j=0;j<this.lettersArray.length;j++){
         //call checkGuess method on the letter cosntructor 
         this.lettersArray[j].checkGuess(guess);

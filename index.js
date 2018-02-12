@@ -7,7 +7,7 @@ var colors = require('colors');
 //global variables
 var newWord;
 
-//Welcome messages
+//Welcome messages on file load
 console.log(colors.magenta.bold("Welcome to Hangman!"));
 console.log(colors.magenta.bold("'FINDING NEMO' edition"));
 console.log(colors.magenta.bold("Guess the names of the characters from this iconic Pixar movie!"));
@@ -38,6 +38,7 @@ function gamePlay(){
 
     prompt.get(property, function (err, result) {
         var guessedLetter = (result.input).toUpperCase();//capture guessed letter
+        
         newWord.guess(guessedLetter); //calling guess method in Word function 
         
         newWord.wordIsComplete(); //checking if the word has been guessed
@@ -58,7 +59,7 @@ function gamePlay(){
     });
 };
 
-
+//function to reset the game based on user's direction
 function resetGame(){
     prompt.start();
     prompt.message = colors.green.bold("?");
@@ -74,7 +75,7 @@ function resetGame(){
         if(result.yesno==="yes"){
             startGame();
         } else {
-            console.log("Thanks for playing. No go and watch 'Finding Nemo'!");
+            console.log(colors.yellow.bold("Thanks for playing. Now go and watch 'Finding Nemo'!"));
         }
     });
 }
