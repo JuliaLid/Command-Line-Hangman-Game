@@ -1,4 +1,4 @@
-var letter = require("./Letter.js");
+var Letter = require("./Letter.js");
 var colors = require('colors');
 
 function Word(word){
@@ -15,16 +15,24 @@ function Word(word){
 Word.prototype.createArray = function(){
     for(i=0;i<this.wordLetterArray.length;i++){
 
-        this.lettersArray.push(new letter (this.wordLetterArray[i]));
+        this.lettersArray.push(new Letter (this.wordLetterArray[i]));
     }
 }
 
+//not working forEach loop
+// Word.prototype.createArray = function(){
+//     this.wordLetterArray.forEach(function(newlett){
+//        var newLetterObject = new Letter(newlett);
+//        console.log(newLetterObject);
+//        this.lettersArray.push(newLetterObject);
+//     });
+// }
+
 //method to check the player's guess and then call the render toString function
 Word.prototype.guess = function(guess) {
-    for (j=0;j<this.lettersArray.length;j++){
-        //call checkGuess method on the letter cosntructor 
-        this.lettersArray[j].checkGuess(guess);
-    }
+    this.lettersArray.forEach(function(lett){
+        lett.checkGuess(guess);
+    });
     this.toString();
 }
 
@@ -48,14 +56,5 @@ Word.prototype.wordIsComplete = function() {
     }  
 };
 
-//Test cases
-// var newWord = new Word("Bullseye");
-// newWord.createArray();
-// newWord.toString();
-// newWord.guess("e");
-// newWord.didWeFindTheWord();
-// console.log(this.guessedWord);
-// newWord.guess("r");
-// newWord.guess("d");
-// newWord.isComplete();
+
 module.exports = Word;
