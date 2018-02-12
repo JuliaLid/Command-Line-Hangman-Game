@@ -53,7 +53,7 @@ function gamePlay(){
             console.log(colors.cyan.bold("Way to go! You know your Pixar characters!"));
             resetGame();
         } else {
-            console.log(colors.grey.bold("Sorry, dude. You're out of guesses! Better luck next time."));
+            console.log(colors.red.bold("Sorry, dude. You're out of guesses! Better luck next time."));
             resetGame();
         }
     });
