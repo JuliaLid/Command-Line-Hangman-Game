@@ -1,3 +1,4 @@
+//letter constructor
 function Letter(wordChar){
     this.character = wordChar;
     this.hasBeenGuessed = false;
@@ -12,19 +13,12 @@ Letter.prototype.renderCharacter = function(){
     }
 }
 
+//method to check the guess against underlying letter and update its hasBeenGuessed property
 Letter.prototype.checkGuess = function(guess){
-        if(guess ===this.character){
-            this.hasBeenGuessed = true;
-           
-           
-            // return this.hasBeenGuessed;
-            return this.hasBeenGuessed;
-          
-          
-        } /*else {
-            console.log("Wrong letter");
-        }*/
-    }
-
+    if(guess ===this.character){
+        this.hasBeenGuessed = true;
+        return this.hasBeenGuessed;
+    } 
+}
 
 module.exports = Letter;
