@@ -2,6 +2,8 @@
 ## Project Overview
 
 Create a Hangman command-line game using constructor functions.
+![capture](https://user-images.githubusercontent.com/31745567/36181995-117acecc-10ed-11e8-8911-9d926979006c.JPG)
+
 
 ## Technology Stack
 * JavaScript 
@@ -10,6 +12,10 @@ Create a Hangman command-line game using constructor functions.
     * [prompt](https://www.npmjs.com/package/prompt): used for getting an input from a player        
     * [colors](https://www.npmjs.com/package/colors): used for styling game commands
   
+## Installation
+Since it is a command line game , you will have to clone the repo.
+
+All required dependencies are captured in a `package.json` file. Simply run `npm install` to play.
 ## Comments
 * This was a tough assignment mainly to constant looping and checking. 
 * Learned a lot about working with JS constructors, especially using the keyword `this`.
