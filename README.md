@@ -2,6 +2,7 @@
 ## Project Overview
 
 Create a Hangman command-line game using constructor functions.
+
 ![capture](https://user-images.githubusercontent.com/31745567/36181995-117acecc-10ed-11e8-8911-9d926979006c.JPG)
 
 
