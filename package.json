@@ -24,7 +24,6 @@
     "asks": "^1.0.3",
     "colors": "^1.1.2",
     "prompt": "^1.0.0",
-    "prompt-confirm": "^1.2.0",
-    "require": "^2.4.20"
+    "prompt-confirm": "^1.2.0"
   }
 }

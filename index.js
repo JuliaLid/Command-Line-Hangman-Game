@@ -40,24 +40,22 @@ function gamePlay(){
         var guessedLetter = (result.input).toUpperCase();//capture guessed letter
         
         newWord.guess(guessedLetter); //calling guess method in Word function 
+        checkIfCorrect(guessedLetter);//checking if the guess is in the newWord letter object array
         
         newWord.wordIsComplete(); //checking if the word has been guessed
         
         //game ending conditions
-        if (newWord.guessedWord ===false && remainingGuesses>1){
-            remainingGuesses --;
-            console.log(colors.red.bold("You have " + remainingGuesses + " guesses left!"));
-            console.log("\n ");
-            gamePlay();
-        } else if (newWord.guessedWord === true){
+        if (newWord.guessedWord === true && remainingGuesses >=1){
             console.log(colors.cyan.bold("Way to go! You know your Pixar characters!"));
             resetGame();
-        } else {
+        } else if (remainingGuesses <1) {
             console.log(colors.red.bold("Sorry, dude. You're out of guesses! Better luck next time."));
             resetGame();
+        } else {
+            gamePlay()
         }
     });
-};
+}
 
 //function to reset the game based on user's direction
 function resetGame(){
@@ -80,5 +78,15 @@ function resetGame(){
     });
 }
 
+//function to check whether the guess is correct or incorrect
+function checkIfCorrect(guessltr){
+    if (newWord.wordLetterArray.indexOf(guessltr)!= -1){
+        console.log(colors.green.bold('CORRECT :)'));
+    } else {
+       console.log(colors.red.bold('INCORRECT :(') + "\n");
+       remainingGuesses --;
+       console.log(colors.red.bold("You have " + remainingGuesses + " guesses left!") + "\n");
+    }
+}
 //start game
 startGame();
