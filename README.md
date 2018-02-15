@@ -17,12 +17,11 @@ Since it is a command line game , you will have to clone the repo.
 
 All required dependencies are captured in a `package.json` file. Simply run `npm install` to play.
 ## Comments
-* This was a tough assignment mainly to constant looping and checking. 
+* This was a tough assignment mainly due to constant looping and checking. 
 * Learned a lot about working with JS constructors, especially using the keyword `this`.
 * Incorporated user input validation using `RegExp` as one of the `prompt` parameters.
 
 ## Challenges
-* Printing whether the user's guess was correct or incorrect. I tried utilizing the existing functions. However, `for loop` would `console.log` 
 * Could not refactor all `for loops` into `forEach` in the Word constructor.
 
 ## Backlog
